@@ -3,7 +3,7 @@ class Strumento:
     def __init__(self, id_strumento, tipo, marca, anno, valore):
         self.id_strumento = id_strumento
         self.tipo = tipo
-        self.marca = marca
+        self.marca = marca.capitalize()
         self.anno = int(anno)
         self.valore = float(valore)
 
@@ -59,7 +59,7 @@ class DepositoStrumenti:
             i+=1
 
         contatore_codice=str(f'S{i}')
-        nuovo_strumento = Strumento(contatore_codice, tipo, marca, anno_acquisto, valore)
+        nuovo_strumento = Strumento(contatore_codice, tipo, marca.capitalize(), anno_acquisto, valore)
         self.strumenti[contatore_codice]=nuovo_strumento
         return nuovo_strumento
 
